@@ -1,15 +1,58 @@
 header{
-  position:fixed;
   background: white;
-  top:0;
-  left: 0;
   width: 100%;
-  z-index: 3;
   display:flex;
   align-items:center;
   flex-direction: column;
+  transition: all 0.3s;
+  div.container{
+    height: 114px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    a{
+      display: flex;
+      align-items: center;
+      max-height:78px;
+      height: 100%;
+      @media (max-width: 768px) {
+        max-height: 55px;
+      }
+      img{
+        height: inherit;
+        max-height:78px;
+        @media (max-width: 768px) {
+          max-height: none;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+  &.fixed{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 3;
+
+    div.container{
+      height: 60px;
+      animation: grow-progress linear none;
+      animation-timing-function: ease-in-out;
+      animation-duration: 400ms;
+      animation-range: cover cover 200px;
+    }
+  }
   .container{
     background: white;
+
+    @media (max-width: 768px) {
+      height: 70px !important;
+      margin-bottom: 50px;
+    }
+    @media (max-width: 550px) {
+      margin-bottom: 20px;
+    }
 
     .go-back{
       display:flex;
@@ -36,40 +79,17 @@ header{
     width:100%;
     opacity: 0.3;
   }
-  div.container{
-    animation: grow-progress linear none;
-    animation-timeline: scroll(y root);
-    animation-timing-function: ease-in-out;
-    animation-duration: 400ms;
-    animation-range: cover cover 200px;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    a{
-      display: flex;
-      align-items: center;
-      max-height:78px;
-      height: 100%;
-      @media (max-width: 768px) {
-        max-height: 55px;
-      }
-      img{
-        height: inherit;
-        max-height:78px;
-        @media (max-width: 768px) {
-          max-height: none;
-          height: 100%;
-          width: 100%;
-        }
-      }
-    }
-  }
   .cart{
     display: flex;
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     a {
-      min-width: 290px;
+      //min-width: 290px;
+      @media (max-width: 1024px) {
+        width: 180px;
+      }
     }
 
     .empty {
@@ -83,6 +103,9 @@ header{
       align-items: center;
       justify-content: center;
       padding: 0 10px 0 20px;
+      svg{
+        fill: #1C1C1C;
+      }
     }
     .not_empty {
       cursor: pointer;
@@ -97,6 +120,9 @@ header{
       border: none;
       padding: 0 10px 0 20px;
       text-decoration: none;
+      svg{
+        fill: white;
+      }
       &:hover{
         background-color: white;
         color: #1C1C1C;
@@ -113,20 +139,35 @@ header{
       align-items: center;
       justify-content: space-between;
       margin-left: 10px;
+      @media (max-width: 1024px) {
+        flex-direction: column;
+      }
 
       &-text {
         font-size: 15px;
         font-weight: 500;
         margin-left: 5px;
         margin-bottom: 0;
+        @media (max-width: 1024px) {
+          text-wrap: nowrap;
+          font-size: 14px;
+        }
       }
       &-count {
         font-size: 14px;
         font-weight: 400;
+        margin-right: 5px;
+        @media (max-width: 1024px) {
+          text-wrap: nowrap;
+          font-size: 12px;
+        }
       }
       &-price {
         font-size: 16px;
         font-weight: 500;
+        @media (max-width: 1024px) {
+          font-size: 14px;
+        }
       }
 
       p {

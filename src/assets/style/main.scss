@@ -20,8 +20,11 @@
   line-height: 1.2;
 }
 
-body hr {
-  opacity: 0.3;
+body{
+  padding-right: 0 !important;
+  hr {
+    opacity: 0.3;
+  }
 }
 
 .container {
@@ -45,7 +48,6 @@ body hr {
   cursor: pointer;
 }
 
-
 @import "header";
 @import "cart";
 @import "order";
@@ -55,6 +57,6 @@ body hr {
 @import "footer";
 @import "modal-product-card";
 @import "modal-goto-card";
-@import "banner_footer";
+@import "footer_banner";
 @import "error-page";
 

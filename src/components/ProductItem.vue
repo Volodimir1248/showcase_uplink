@@ -76,6 +76,7 @@ function showModal(product) {
     },
   });
   productModal.open();
+
 }
 
 function addToCart() {

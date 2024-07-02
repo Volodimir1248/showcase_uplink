@@ -1,14 +1,24 @@
 .products{
-  margin-top: 120px;
   &__head{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 40px;
+    margin-top: 5px;
+    @media (max-width: 550px) {
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     &-title{
       font-size: 20px;
       font-weight: 500;
+      @media (max-width: 1024px) {
+        font-size: 16px;
+      }
+      @media (max-width: 550px) {
+        margin-bottom: 24px;
+      }
     }
 
     .sort-select{
@@ -22,6 +32,11 @@
       font-size: 16px;
       font-weight: 400;
       cursor: pointer;
+      @media (max-width: 1024px) {
+        width: 180px;
+        height: 30px;
+        font-size: 14px;
+      }
     }
   }
   &__body{
@@ -31,6 +46,13 @@
     grid-template-columns: repeat(4, minmax(100px, 1fr));
     column-gap: 20px;
     row-gap: 50px;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: calc((780px - 700px) / 4);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
@@ -62,11 +84,18 @@
       min-height: 34px;
       font-size: 14px;
       line-height: 1.2;
+      @media (max-width: 1024px) {
+        font-size: 12px;
+        margin-top: 6px;
+      }
     }
     &-price{
       font-size: 20px;
       font-weight: 500;
       color:#212121;
+      @media (max-width: 1024px) {
+        font-size: 16px;
+      }
     }
     &-old-price{
       font-size: 16px;
@@ -74,12 +103,18 @@
       color:#B9B9B9;
       text-decoration: line-through;
       margin-left: 10px;
+      @media (max-width: 1024px) {
+        font-size: 12px;
+      }
     }
     &-price-row{
       margin-top: 7px;
       display: flex;
       align-items: center;
       min-height: 30px;
+      @media (max-width: 1024px) {
+        margin-top: 5px;
+      }
     }
     &-discount{
       margin-left: auto;
@@ -93,6 +128,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @media(max-width: 1024px) {
+        width: 37px;
+        height: 19px;
+        font-size: 12px;
+      }
     }
     &-img {
       overflow: hidden;
@@ -108,9 +148,6 @@
         transition: transform 1s, filter 1s;
         border-radius: 5px;
         -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         will-change: transform;
         &:hover  {
@@ -135,6 +172,12 @@
       transition-property: color,outline,background-color,fill;
       transition: 150ms ease;
       cursor: pointer;
+      @media (max-width: 1024px) {
+        height: 36px;
+        font-size: 14px;
+        gap: 5px;
+        margin-top: 10px;
+      }
       svg{
         width: 24px;
         height: 24px;

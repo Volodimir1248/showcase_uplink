@@ -1,7 +1,7 @@
 <template>
   <MainHeader />
 
-  <div class="header-margin container info">
+  <div class="container info">
     <h1> {{ data.pagetitle }} </h1>
     <div v-html="data.content"></div>
   </div>

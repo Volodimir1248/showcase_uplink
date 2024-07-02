@@ -2,7 +2,7 @@
   <div>
     <HeaderCart/>
 
-    <div class="header-margin container block-height">
+    <div class="container block-height">
       <h3 class="cart-title">
         Ваш заказ
       </h3>
@@ -69,8 +69,6 @@
           </div>
         </div>
 
-
-
         <div class="cart-product-total">
           <p class="cart-product-total-title">Стоимость</p>
 
@@ -117,17 +115,14 @@
 </template>
 
 <script setup>
-import {ref, reactive, onMounted, watch, computed, getCurrentInstance} from 'vue';
+import {computed, getCurrentInstance} from 'vue';
 import HeaderCart from "@/components/HeaderCart.vue";
 import Footer from "@/components/Footer.vue";
 const { proxy } = getCurrentInstance();
 import {useCartInfo} from "@/stores/cartInfo";
 
 const cartInfo = useCartInfo();
-// const $store = proxy.$store;
 const $mainSite = proxy.$mainSite;
-
-
 
 const products = computed(() => {
   return cartInfo.cart

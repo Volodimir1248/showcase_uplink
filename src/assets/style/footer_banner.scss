@@ -8,6 +8,11 @@
   position:relative;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    height: 38px;
+    min-height: 38px;
+  }
   &-left,&-right{
     position:absolute;
     top: 0;
@@ -39,5 +44,21 @@
     padding: 0 30px;
     position: absolute;
     background: #E5F3CE;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
+    @media (max-width: 768px){
+      text-align: center;
+      width: 58%;
+      font-size: 14px;
+      height: calc(100% + 2px);
+    }
+    @media (max-width: 550px){
+      width: 87%;
+    }
+    @media (max-width: 400px){
+      font-size: 12px;
+    }
   }
 }

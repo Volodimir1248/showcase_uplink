@@ -11,7 +11,6 @@ import 'vue-final-modal/style.css'
 import "./assets/style/main.scss";
 import '@vuepic/vue-datepicker/dist/main.css'
 
-
 const app = createApp(App);
 
 const pinia = createPinia();
@@ -27,5 +26,6 @@ useSiteInfo().getSiteSettings().then(() => {
         cartInfo: useCartInfo()
     }
     app.config.globalProperties.$mainSite = import.meta.env.VITE_MAIN_SITE
+    document.title = useSiteInfo().siteInfo.sitename
     app.mount('#app');
 });

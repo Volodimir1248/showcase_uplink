@@ -4,6 +4,9 @@
   flex-grow: 1;
   gap: 20px;
   margin-top: 0 !important;
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
   &__row{
     margin-bottom: 30px;
     &-title{
@@ -47,6 +50,9 @@
       flex-grow: 1;
       width: 45%;
       height: fit-content;
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
       input:not(input[type=radio]):not(input[type=checkbox]), textarea {
         width: 100%;
         background: white;
@@ -56,6 +62,12 @@
         min-height: 36px;
         padding: 0 12px;
         color: black;
+        &.error {
+          border: 1px solid brown !important;
+        }
+        &.dp__input_icon_pad{
+          padding-left: 35px;
+        }
       }
       textarea {
         padding-top: 12px;
@@ -67,6 +79,8 @@
       &.form-group-textarea {
         width: 100%;
       }
+
+
     }
     .select2{
       width: 100%;
@@ -112,6 +126,16 @@
       display: block;
       width: auto!important;
     }
+  }
+}
+
+.validation-text {
+  display: none;
+  color: brown;
+  border: 0 !important;
+  margin-bottom: 5px;
+  &.error{
+    display: flex;
   }
 }
 

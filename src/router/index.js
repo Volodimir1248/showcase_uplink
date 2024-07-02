@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/Home.vue'
+import HomeView from '@/views/Main.vue'
 
 import Cart from "@/views/Cart.vue";
 import Checkout from "@/views/Checkout.vue";

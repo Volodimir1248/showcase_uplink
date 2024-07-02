@@ -10,11 +10,20 @@
     padding: 5px 0 20px 0;
     display: flex;
     gap: 30px;
+    @media (max-width: 1024px) {
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
   &-product{
     display: flex;
     flex-direction: column;
     width: 66.6%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     &-wrap{
       display: block;
@@ -27,11 +36,6 @@
       margin: 10px 0;
     }
 
-    &-info {
-      display: flex;
-      gap: 10px;
-    }
-
     &-img {
       aspect-ratio: 1;
       width: 80px;
@@ -39,6 +43,8 @@
     }
 
     &-info {
+      display: flex;
+      gap: 10px;
       .title {
         max-width: 220px;
         display: flex;
@@ -121,6 +127,11 @@
       padding: 20px 10px;
       border: 1px solid #B9B9B9;
       height: fit-content;
+      @media (max-width: 768px) {
+        border: none !important;
+        padding: 20px 0 !important;
+      }
+
       &-title {
         font-size: 20px;
         font-weight: 500;
@@ -161,6 +172,13 @@
             font-weight: 500;
           }
         }
+        &-policy {
+          margin-top: 10px;
+          font-size: 14px;
+          a {
+            color: black;
+          }
+        }
       }
       .make-order {
         max-width: 240px;
@@ -178,6 +196,63 @@
         text-decoration: none;
         transition-property: border, background, color;
         transition: ease 150ms;
+      }
+    }
+  }
+
+
+  &-bottom{
+    gap: 5px;
+    border-radius: 8px;
+    background: white;
+    border: 7px solid black;
+    align-items: center;
+    padding: 10px;
+    display: none;
+    &__link{
+      bottom: 2px;
+      position: sticky;
+      display: block;
+      z-index: 2;
+      width: 100%;
+      height: 56px;
+      text-decoration: none;
+      color: black;
+    }
+    @media (max-width: 768px) {
+      &.full{
+        display: flex;
+      }
+      &.zero{
+        display: none;
+      }
+    }
+
+    p{
+      text-decoration: none;
+    }
+    .cart__info{
+      margin-left: auto;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      &-text{
+        font-size: 14px;
+        font-weight: 500;
+      }
+      &-count {
+        font-size: 12px;
+        margin-bottom: 2.1px;
+      }
+      &-discount {
+        font-size: 12px;
+        text-decoration: line-through;
+        color: #bebebe;
+      }
+      &-price {
+        font-size: 14px;
+        font-weight: 500;
       }
     }
   }
