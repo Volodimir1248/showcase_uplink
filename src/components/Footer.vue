@@ -23,15 +23,16 @@
           </a>
         </div>
         <div class="footer__policy">
-          <RouterLink to="/delivery">
+          <RouterLink :to="{ name: 'delivery' }">
             Условия доставки товара
           </RouterLink>
 
-          <RouterLink to="/return-and-exchange">
+
+          <RouterLink :to="{ name: 'return-and-exchange' }">
             Возврат и обмен
           </RouterLink>
 
-          <RouterLink to="/policy">
+          <RouterLink :to="{ name: 'policy' }">
             Политика конфиденциальности
           </RouterLink>
         </div>

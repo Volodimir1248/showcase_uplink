@@ -67,7 +67,7 @@
             <span v-else> товаров</span>
           </p>
           <div class="cart__info">
-            <p class="cart__info-discount"><span class="ms2_total_cost">{{ discountProducts }}</span> ₽</p>
+            <p v-if="discountProducts" class="cart__info-discount"><span class="ms2_total_cost">{{ discountProducts }}</span> ₽</p>
             <p class="cart__info-price"><span class="ms2_total_cost">{{ priceProduct }}</span> ₽</p>
           </div>
         </div>

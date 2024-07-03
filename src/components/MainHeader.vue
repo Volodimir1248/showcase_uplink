@@ -2,7 +2,7 @@
   <header>
     <div class="container">
 
-      <RouterLink to="/">
+      <RouterLink :to="{ name: 'home' }">
         <img class="logo" :src="siteLogo" alt="logo">
       </RouterLink>
 

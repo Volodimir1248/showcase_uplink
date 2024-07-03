@@ -113,7 +113,6 @@
                   <textarea
                       name="comment"
                       placeholder="Комментарий"
-                      class="form-control{('comment' in list $errors) ? ' error' : ''}"
                       v-model="order.comment"
                   />
                   </div>
