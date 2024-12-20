@@ -168,7 +168,7 @@ function showModal() {
     name: props.product.name,
     price: props.product.price,
     old_price: props.product.old_price,
-    image: props.product.images[0].url
+    image: props.product.images[0].url + "small/" + props.product.images[0].file
   }
   cartInfo.addItem(product);
 
