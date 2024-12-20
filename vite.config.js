@@ -14,6 +14,9 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
-    }
+    },
+    server: {
+      historyApiFallback: true, // Это разрешит серверу перенаправлять все запросы на index.html
+    },
   };
 });

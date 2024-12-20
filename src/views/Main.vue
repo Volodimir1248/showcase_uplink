@@ -2,7 +2,7 @@
   <div>
     <MainHeader ref="header" />
 
-    <main class="products container mt140" >
+    <main class="products container mt140" id="main">
       <div class="products__head">
         <h1 class="products__head-title">
           Букеты в наличии
@@ -143,7 +143,15 @@ let getProducts = async (page) => {
   let response = await apiClient.get(`/products?${new URLSearchParams(refFilter)}`);
   products.value = response.data;
   currentPage.value = page;
+
+  scroll()
 };
+
+let scroll = () => {
+  const main = document.querySelector("#main")
+  console.log(main.getBoundingClientRect().y)
+  window.scrollTo(0, main.getBoundingClientRect().y - 140)
+}
 
 onMounted(() => {
   getCountProducts()
