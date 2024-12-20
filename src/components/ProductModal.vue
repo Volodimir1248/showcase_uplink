@@ -38,7 +38,7 @@
               :key="image_key"
               class="swiper-slide"
           >
-            <img :src="srcImage(image.url)" :alt="product.name + image.rank">
+            <img :src="srcImage(image, 'normal/')" :alt="product.name + image.rank">
           </swiper-slide>
         </swiper>
 
@@ -56,7 +56,7 @@
               :key="image_key"
               class="swiper-slide"
           >
-            <img :src="srcImage(image.url)" :alt="product.name + image.rank">
+            <img :src="srcImage(image, 'small/')" :alt="product.name + image.rank">
           </swiper-slide>
         </swiper>
       </div>
@@ -126,8 +126,8 @@ const props = defineProps({
 const { proxy } = getCurrentInstance();
 const { product } = toRefs(props);
 
-function srcImage(url){
-  return proxy.$mainSite + url
+function srcImage(image, format){
+  return proxy.$mainSite + image.url + format + image.file
 }
 
 const thumbsSwiper = ref(null);

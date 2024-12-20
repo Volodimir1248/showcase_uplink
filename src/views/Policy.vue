@@ -1,7 +1,7 @@
 <template>
   <MainHeader />
 
-  <div class=" container info">
+  <div class="container info mt140">
     <h1>{{ data.pagetitle }}</h1>
     <div v-html="data.content"></div>
   </div>
@@ -18,8 +18,8 @@ import apiClient from "../axios";
 let data = ref({});
 
 const init = async () => {
-  let response = await apiClient.get('/showcase-params');
-  data.value = response.data.settings.policy;
+  let response = await apiClient.get('/site-pages');
+  data.value = response.data.policy;
 };
 
 onMounted(() => {

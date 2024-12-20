@@ -2,7 +2,7 @@
   <div>
     <HeaderCart/>
 
-    <div class="container block-height">
+    <div class="container block-height mt140">
       <h3 class="cart-title">
         Ваш заказ
       </h3>

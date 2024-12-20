@@ -85,7 +85,7 @@ function addToCart() {
     name: props.product.name,
     price: props.product.price,
     old_price: props.product.old_price,
-    image: props.product.images[0].url
+    image: props.product.images[0].url + "small/" + props.product.images[0].file
   }
   cartInfo.addItem(product);
 }
@@ -95,7 +95,9 @@ function removeToCart() {
 }
 
 const { product } = toRefs(props);
-const imgUrl = computed(() => $mainSite + product.value.images[0].url);
+const imgUrl = computed(() => {
+  return $mainSite + product.value.images[0].url + "normal/" + product.value.images[0].file
+});
 
 const countProduct = computed(() => {
   let existingProduct = $store.cartInfo.cart.find(item => item.id === props.product.id);

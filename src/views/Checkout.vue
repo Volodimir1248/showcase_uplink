@@ -2,7 +2,7 @@
   <div>
     <HeaderCart/>
 
-    <div class="container">
+    <div class="container mt140">
       <div class="cart-block">
         <div class="order-input">
 
@@ -399,12 +399,12 @@ const discountProducts = computed(() => {
       discount += (product.old_price - product.price) * product.quantity
     }
   })
-  return discount
+  return discount > 0 ? discount : 0
 });
 
 async function getDeliveriesList() {
   let responseDeliveries = await apiClient.get('/deliveries-list');
-  deliveriesList.value = responseDeliveries.data.deliveries
+  deliveriesList.value = responseDeliveries.data
 
   order.delivery = deliveriesList.value[0].id
   order.delivery_cost = order.pickup ? 0 : Number(deliveriesList.value[0].price)
@@ -412,12 +412,12 @@ async function getDeliveriesList() {
 
 async function getPaymentsList() {
   let responsePayments = await apiClient.get('/payments-list');
-  paymentsList.value = responsePayments.data.payments
+  paymentsList.value = responsePayments.data
 }
 
 async function getIntervals() {
   let responseIntervals = await apiClient.get('/intervals');
-  deliveryIntervals.value = responseIntervals.data.intervals.options.split(",")
+  deliveryIntervals.value = responseIntervals.data.options.split(",")
 }
 
 function init() {
@@ -439,6 +439,7 @@ function deliveryPrice(event){
     let delivery = deliveriesList.value.find((elem) =>{
       if (Number(elem.id) === Number(event.target.value)) return elem
     })
+    console.log("delivery", delivery)
     order.delivery_cost = Number(delivery.price)
   }
 }

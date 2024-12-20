@@ -1,11 +1,8 @@
 <template>
   <div>
-    <MainHeader
-        :class="{ fixed: isFixed }"
-        ref="header"
-    />
+    <MainHeader ref="header" />
 
-    <main class="products container" :style="{ marginTop: isFixed ? '120px' : '0px' }">
+    <main class="products container mt140" >
       <div class="products__head">
         <h1 class="products__head-title">
           Букеты в наличии
@@ -95,22 +92,22 @@ const sortsList = ref([
   },
   {
     name: "Сначала новые",
-    sortby: "content.createdon",
+    sortby: "createdon",
     dir: "desc"
   },
   {
     name: "По названию (А-Я, A-Z)",
-    sortby: "content.pagetitle",
+    sortby: "pagetitle",
     dir: "asc"
   },
   {
     name: "Сначала дешевые",
-    sortby: "product.price",
+    sortby: "price",
     dir: "asc"
   },
   {
     name: "Сначала дорогие",
-    sortby: "product.price",
+    sortby: "price",
     dir: "desc"
   }
 ]);
@@ -144,7 +141,7 @@ let getProducts = async (page) => {
   refFilter.offset = (page - 1) * limitPage.value
 
   let response = await apiClient.get(`/products?${new URLSearchParams(refFilter)}`);
-  products.value = response.data.products;
+  products.value = response.data;
   currentPage.value = page;
 };
 
